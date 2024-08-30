@@ -1,5 +1,7 @@
 package com.example.lifecycle;
 
+import static java.lang.Integer.parseInt;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
+
         setContentView(R.layout.activity_main);
         textView = findViewById(R.id.textView);
         button1 = findViewById(R.id.button1);
@@ -133,11 +137,11 @@ public class MainActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("saveData", Context.MODE_PRIVATE);
         userName = sharedPreferences.getString("name", null);
         message = sharedPreferences.getString("message", null);
-        counter = sharedPreferences.getInt("count", 0);
+//        counter = sharedPreferences.getInt("count", 0);
         isChecked = sharedPreferences.getBoolean("remember", false);
         name.setText(userName);
         userMessage.setText(message);
-        textView.setText(count);
+//        textView.setText(counter);
 
         if (isChecked) {
             remember.setChecked(true);

@@ -24,6 +24,7 @@ TextView name;
         button = findViewById(R.id.button3);
         name = findViewById(R.id.textView2);
         Intent intent = getIntent();
+
         String userName = intent.getStringExtra("user");
         name.setText(userName);
         button.setOnClickListener(new View.OnClickListener() {
